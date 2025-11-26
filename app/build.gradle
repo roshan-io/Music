@@ -1,12 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' version '1.8.10'
 }
 
 android {
     compileSdk 34
-    
 
-    namespace 'com.example.mygame' // <-- Add this line
+    namespace 'com.example.mygame'
 
     defaultConfig {
         applicationId "com.example.mygame"
@@ -19,11 +19,18 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // Optional: suppress warning if using AGP 8.0.2 with compileSdk 34
+    lintOptions {
+        warning 'InvalidPackage'
     }
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.core:core-ktx:1.10.1'
 }
