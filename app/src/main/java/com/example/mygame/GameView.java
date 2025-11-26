@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class GameView extends SurfaceView implements Runnable {
+public class GameView extends SurfaceView implements Runnable, SurfaceHolder.Callback {
 
     private Thread gameThread;
     private boolean isPlaying = true;
@@ -20,6 +20,7 @@ public class GameView extends SurfaceView implements Runnable {
 
     public GameView(Context context) {
         super(context);
+        getHolder().addCallback(this); // Register SurfaceHolder callback
         paint.setTextSize(60);
         paint.setColor(Color.WHITE);
     }
@@ -90,4 +91,9 @@ public class GameView extends SurfaceView implements Runnable {
         gameThread = new Thread(this);
         gameThread.start();
     }
-          }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        // Not used, required by interface
+    }
+}
