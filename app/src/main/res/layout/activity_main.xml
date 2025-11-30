@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0A0A0A">
+
+    <!-- Center controls -->
+    <LinearLayout
+        android:id="@+id/controls_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/edit_x"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:hint="X (192.168.x.104)"
+            android:inputType="number"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#777777"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/edit_port"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:hint="Port"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#777777"
+            android:background="@drawable/rounded_edittext"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:text="CONNECT"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/neon_button"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Fullscreen WebView -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
 </FrameLayout>
