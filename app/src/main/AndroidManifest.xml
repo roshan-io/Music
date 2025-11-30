@@ -5,7 +5,6 @@
         android:allowBackup="true"
         android:label="Simple Game"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity android:name=".MainActivity"            
