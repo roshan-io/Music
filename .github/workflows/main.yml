@@ -38,7 +38,7 @@ jobs:
           restore-keys: |
             gradle-${{ runner.os }}-
 
-      # 5. Install required Android SDK packages
+      # 5. Install required Android SDK packages app
       - name: Install Android SDK packages
         run: |
           mkdir -p $ANDROID_SDK_ROOT/cmdline-tools
