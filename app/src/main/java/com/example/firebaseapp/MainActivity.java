@@ -1,19 +1,22 @@
-package com.example.firebaseapp;
+package com.example.mygame;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        TextView tv = new TextView(this);
-        tv.setText("js App Working!");
-        tv.setTextSize(24);
+        WebView webView = new WebView(this);
+        setContentView(webView);
 
-        setContentView(tv);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+
+        webView.loadUrl("file:///android_asset/index.html");
     }
 }
