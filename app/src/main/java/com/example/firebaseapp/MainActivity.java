@@ -1,24 +1,19 @@
 package com.example.firebaseapp;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
-    WebView web;
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        web = new WebView(this);
-        setContentView(web);
+        TextView tv = new TextView(this);
+        tv.setText("js App Working!");
+        tv.setTextSize(24);
 
-        web.getSettings().setJavaScriptEnabled(true);
-        web.setWebViewClient(new WebViewClient());
-
-        web.loadUrl("file:///android_asset/index.html");
+        setContentView(tv);
     }
 }
