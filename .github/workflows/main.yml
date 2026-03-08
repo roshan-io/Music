@@ -59,3 +59,4 @@ jobs:
         with:
           name: debug-apk
           path: app/build/outputs/apk/**/*.apk
+
